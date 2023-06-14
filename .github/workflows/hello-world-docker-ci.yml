@@ -1,0 +1,6 @@
+on:
+  push:
+    branches-ignore: 
+      - 'main'
+      
+name: 'Hello World Docker CI'
