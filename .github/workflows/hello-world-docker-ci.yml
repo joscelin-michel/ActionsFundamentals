@@ -2,5 +2,15 @@ on:
   push:
     branches-ignore: 
       - 'main'
-      
+  workflow_dispatch:
+  
 name: 'Hello World Docker CI'
+
+jobs:
+ publish:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: ../hello-world-docker-action/action@main
+       with:
+          who-to-greet: 'Mona the Octocat'
+          
