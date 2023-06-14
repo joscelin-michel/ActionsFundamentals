@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     name: Build
     steps:
-      - run : echo "Job triggered by {{ github.event_name}}"
+      - run : |
+          echo "Job triggered by event ${{ github.event_name}}"
+          echo "Job triggered from branch ${{ github.ref_name }}"
       - uses: actions/checkout@v3.3.0
+      - run : ls ${{ github.action_path }}
       
